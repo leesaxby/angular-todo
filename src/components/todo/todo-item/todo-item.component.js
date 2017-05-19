@@ -5,8 +5,5 @@ export default {
   bindings: {
     item: '<'
   },
-  templateUrl: item,
-  controller() {
-    console.log(this.item)
-  }
+  templateUrl: item
 };
