@@ -18,7 +18,7 @@ export default {
             if (ctrl.todo.text) {
                 ctrl.onAddTodo({
                     $event: {
-                      todo: ctrl.todo
+                        todo: ctrl.todo
                     }
                 })
             }

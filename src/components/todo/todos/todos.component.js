@@ -13,6 +13,8 @@ export default {
             ctrl.todos = todoService.getTodos();
         };
         
-        ctrl.addTodo = ({ todo }) => ctrl.todos.unshift(todo);
+        ctrl.addTodo = ({ todo }) => ctrl.todos = [todo, ...ctrl.todos];
+      
+        ctrl.updateTodos = ({ todos }) => ctrl.todos = todos;
     }
 };
