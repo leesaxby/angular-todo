@@ -1,6 +1,7 @@
-<todo-form todo="ctrl.newTodo"
+<todo-form todo="$ctrl.newTodo"
            on-add-todo="$ctrl.addTodo($event)">
 </todo-form>
 
-<todo-list items="$ctrl.todos">
+<todo-list items="$ctrl.todos"
+           on-update-todos="$ctrl.updateTodos($event)">
 </todo-list>
