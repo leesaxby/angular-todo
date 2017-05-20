@@ -1,7 +1,12 @@
-<todo-form todo="$ctrl.newTodo"
+<div class="flex-container">
+    <todo-form todo="$ctrl.newTodo"
            on-add-todo="$ctrl.addTodo($event)">
-</todo-form>
+    </todo-form>
+</div>
 
-<todo-list items="$ctrl.todos"
-           on-update-todos="$ctrl.updateTodos($event)">
-</todo-list>
+<div class="flex-container">
+    <todo-list items="$ctrl.todos"
+               on-update-todos="$ctrl.updateTodos($event)">
+    </todo-list>
+</div>
+

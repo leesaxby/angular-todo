@@ -1,5 +1,5 @@
 <ul>
-    <todo-item ng-repeat="item in $ctrl.items"
+    <todo-item ng-repeat="item in $ctrl.items track by $index"
                item="item"
                on-remove-item="$ctrl.removeItem($event)">
     </todo-item>
