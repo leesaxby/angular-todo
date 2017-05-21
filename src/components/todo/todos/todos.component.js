@@ -20,8 +20,6 @@ export default {
               }
         };
       
-        ctrl.updateTodos = ({ todos }) => {
-            ctrl.todos = todos;
-        };
+        ctrl.updateTodos = ({ todos }) => ctrl.todos = todos;
     }
 };

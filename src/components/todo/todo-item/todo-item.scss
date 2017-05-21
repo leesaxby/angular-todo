@@ -11,13 +11,25 @@
     box-shadow: 0 2px 3px #aaa;
     margin-bottom: 10px;
     font-weight: 300;
-}
+    cursor: pointer;
 
-.status-circle {
-    display: inline-block;
-    background-color: #2ecc71;
-    height: 15px;
-    width: 15px;
-    border-radius: 75px;
-    margin-right: 10px;
+    .status-circle {
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        border-radius: 75px;
+        margin-right: 10px;
+        background-color: #2ecc71;
+    }
+
+    .item-done {
+        color: #7f7f7f;
+        font-style: italic;
+        text-decoration: line-through;
+    }
+
+    .status-done {
+        background-color: #f39c12;
+        color: #989898;
+    }
 }
