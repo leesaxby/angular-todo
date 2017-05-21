@@ -16,8 +16,10 @@ export default {
             }
         };
       
-        ctrl.removeItem = ({ selectedItem }) => {
-            ctrl.items = ctrl.items.filter(item => item.text !== selectedItem.text);  
+        ctrl.selectItem = ({ selectedItem }) => {
+            const item = ctrl.items.find(item => item.id === selectedItem.id);  
+            item.selected = !item.selected;
+            
             ctrl.onUpdateTodos({
                 $event: {
                     todos: ctrl.items

@@ -1,6 +1,9 @@
-<li id="$ctr.item.id">
-    {{$ctrl.item.text}}
-    <button ng-click="$ctrl.removeItem()">
-        Remove
-    </button>
+<li class="todo"
+    ng-click="$ctrl.selectItem()">
+    <div class="status-circle"
+         ng-class="{'status-done': $ctrl.item.selected}">
+    </div>
+    <span ng-class="{'item-done': $ctrl.item.selected}">
+        {{$ctrl.item.text}}
+    </span>
 </li>
