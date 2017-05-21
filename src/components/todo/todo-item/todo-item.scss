@@ -1,3 +1,23 @@
-h1 {
-    color: blue;
+.todo {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background: #ffffff;
+    height: 40px;
+    width: 100%;
+    padding: 0 10px;
+    border: solid #2ecc71 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 3px #aaa;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.status-circle {
+    display: inline-block;
+    background-color: #2ecc71;
+    height: 15px;
+    width: 15px;
+    border-radius: 75px;
+    margin-right: 10px;
 }
