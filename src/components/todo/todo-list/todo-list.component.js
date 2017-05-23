@@ -5,10 +5,15 @@ export default {
     templateUrl: list,
     bindings: {
         items: '<',
+        currentFilter: '<',
         onUpdateTodos: '&'
     },
     controller() {
         const ctrl = this;
+      
+        ctrl.$onInit = () => {
+            ctrl.showDone = ctrl.currentFilter === 'done';
+        };      
       
         ctrl.$onChanges = (changes) => {
             if (changes.items) {

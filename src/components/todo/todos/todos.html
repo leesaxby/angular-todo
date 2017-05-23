@@ -2,10 +2,15 @@
       <todo-form todo="$ctrl.newTodo"
                  on-add-todo="$ctrl.addTodo($event)">
       </todo-form>
+
+      <filters current-filter="$ctrl.currentFilter"
+               on-filter-change="$ctrl.updateFilter($event)">
+      </filters>
 </div>
 
 <div class="flex-container"> 
       <todo-list items="$ctrl.todos"
+                 current-filter="$ctrl.currentFilter"
                  on-update-todos="$ctrl.updateTodos($event)"
                  class="todo-list">
       </todo-list>  
