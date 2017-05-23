@@ -11,7 +11,7 @@ export default {
         const ctrl = this;
 
         ctrl.$onInit = () => {
-            ctrl.selected = ctrl.currentFilter === 'todo' ? false : true;
+            ctrl.selected = ctrl.currentFilter === 'done';
         };
       
         ctrl.updateFilter = () => {
