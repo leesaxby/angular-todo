@@ -1,5 +1,5 @@
 <ul class="todo-list">
-    <todo-item ng-repeat="item in $ctrl.items track by $index"
+    <todo-item ng-repeat="item in $ctrl.items | filter : {selected: $ctrl.showDone} : true track by $index"
                item="item"
                on-select-item="$ctrl.selectItem($event)">
     </todo-item>

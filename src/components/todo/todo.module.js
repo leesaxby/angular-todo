@@ -7,6 +7,8 @@ import todos from './todos/todos.component.js';
 import todoForm from './todo-form/todo-form.component.js';
 import list from './todo-list/todo-list.component.js';
 import item from './todo-item/todo-item.component.js';
+import filters from './filters/filters.component.js';
+
 
 export default angular.module('todo', [router])
         .service('todoService', todoService)
@@ -14,10 +16,11 @@ export default angular.module('todo', [router])
         .component('todoForm', todoForm)
         .component('todoList', list)
         .component('todoItem', item)
+        .component('filters', filters)
         .config(function ($stateProvider) {
             $stateProvider
                 .state('todo', {
-                    url: '/todo',
+                    url: '/todo?filter',
                     component: 'todos'
                 })
         }).name;
