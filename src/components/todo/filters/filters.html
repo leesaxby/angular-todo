@@ -1,11 +1,11 @@
 <div class="slider"
+     ng-click="$ctrl.updateFilter()"
      ng-class="{'selected': $ctrl.selected}">
     <span ng-if="$ctrl.selected">
         done
     </span>
   
     <div class="switch"
-         ng-click="$ctrl.updateFilter()"
          ng-class="{'switch-right': $ctrl.selected}">
     </div>
   
