@@ -1,13 +1,14 @@
 .slider {
     display: flex;
     align-items: center;
-    height: 43px;
+    height: 40px;
     width: 85px;
     border-radius: 10px;
     background-color: #2ecc71;
     padding: 0 3px 0 3px;
     margin: 0 20px;
     box-sizing: border-box;
+    cursor: pointer;
  
     &.selected {
         background-color: #f39c12;
@@ -22,7 +23,7 @@
         height: 30px;
         width: 30px;
         margin: 0 3px;
-        border-radius: 10px;
+        border-radius: 8px;
         background-color: #efefef;
         box-shadow: 0 .1429em .2143em rgba(43,43,43,.2), 0 .3572em .3572em rgba(43,43,43,.1);
     }
