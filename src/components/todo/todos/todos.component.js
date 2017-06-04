@@ -3,28 +3,36 @@ import styles from './todos.scss';
 
 export default {
     templateUrl: todos,
-    controller($stateParams, $location, todoService) {
+    controller($stateParams, $location, $timeout, todoService) {
         const ctrl = this;
 
-        ctrl.$onInit = () => {
+        ctrl.$onInit = () => {          
+            ctrl.todos = todoService.getTodos();
+          
             if (!$stateParams.filter) {
                 $location.search('filter', 'todo');
             }
 
             ctrl.currentFilter = $stateParams.filter;
-            ctrl.todos = todoService.getTodos();
+            
+           //TODO: Resolve in router for initial todos
+            todoService.onUpdate(todos => {
+              console.log("on update in todos")
+              $timeout(() => ctrl.todos = todos);              
+            })
+
             ctrl.newTodo = getNewTodo(ctrl.todos);
         };
       
         ctrl.addTodo = ({ todo }) => {
-              todoService.setTodos([todo, ...ctrl.todos]);
-              ctrl.todos = todoService.getTodos()
-              ctrl.newTodo = getNewTodo(ctrl.todos);
+            ctrl.todos = [todo, ...ctrl.todos];
+            ctrl.newTodo = getNewTodo(ctrl.todos);
+            todoService.updateTodos(ctrl.todos);
         };
       
         ctrl.updateTodos = ({ todos }) => {
-            todoService.setTodos(todos);
-            ctrl.todos = todoService.getTodos()
+            ctrl.todos = todos;
+            todoService.updateTodos(ctrl.todos);
         };
     
         ctrl.updateFilter = (filter) => $location.search(filter);

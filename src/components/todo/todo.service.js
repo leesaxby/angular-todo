@@ -1,27 +1,26 @@
-export default function todoService() {
+export default function todoService($q) {
+    let todos = [];
+    let ws = new WebSocket( "ws://178.62.117.150:8888", "echo-protocol" );
+    let updateHandler;
     
-    let todos = [
-            { id: 1, text: "Item 1", selected: false },
-            { id: 2, text: "Item 2", selected: false },
-            { id: 3, text: "Item 3", selected: false },
-            { id: 4, text: "Item 4", selected: false },
-            { id: 5, text: "Item 5", selected: false },
-            { id: 6, text: "Item 6", selected: true },
-            { id: 7, text: "Item 7", selected: true },
-            { id: 8, text: "Item 8", selected: true },
-            { id: 9, text: "Item 9", selected: true },
-            { id: 10, text: "Item 10", selected: true },
-    ];
-    
-    const getTodos = () => todos;
-    
-    const setTodos = (newTodos) => {
-      console.log(newTodos)
-      todos = newTodos
+    let updateTodos = ( data ) => {
+        todos = data;
+        ws.send( JSON.stringify(todos) )
     };
+
+    let onUpdate = (callback) => updateHandler = callback;
+
+    let getTodos = () => todos;
   
+    ws.addEventListener("message", msg => {
+        todos =JSON.parse(msg.data);
+        updateHandler(todos);
+    });
+    
     return {
         getTodos,
-        setTodos
+        onUpdate,
+        updateTodos,
     };
+  
 }
