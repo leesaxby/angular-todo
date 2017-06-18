@@ -15,10 +15,8 @@ export default {
 
             ctrl.currentFilter = $stateParams.filter;
             
-           //TODO: Resolve in router for initial todos
             todoService.onUpdate(todos => {
-              console.log("on update in todos")
-              $timeout(() => ctrl.todos = todos);              
+                $timeout(() => ctrl.todos = todos);              
             })
 
             ctrl.newTodo = getNewTodo(ctrl.todos);

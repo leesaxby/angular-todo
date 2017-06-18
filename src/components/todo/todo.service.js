@@ -13,7 +13,7 @@ export default function todoService($q) {
     let getTodos = () => todos;
   
     ws.addEventListener("message", msg => {
-        todos =JSON.parse(msg.data);
+        todos = JSON.parse(msg.data);
         updateHandler(todos);
     });
     
